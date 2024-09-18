@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown</title>
+    <title>Contagem SJMP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,7 +25,7 @@
     <div id="countdown"></div>
 
     <script>
-        // Set the countdown date
+        // Define the countdown date
         var countdownDate = new Date("Oct 6, 2024 21:00:00").getTime();
 
         // Update the countdown every second
@@ -39,9 +39,18 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            // Use singular for 1 and plural for everything else (including 0)
+            var daysText = days === 1 ? "dia" : "dias";
+            var hoursText = hours === 1 ? "hora" : "horas";
+            var minutesText = minutes === 1 ? "minuto" : "minutos";
+            var secondsText = seconds === 1 ? "segundo" : "segundos";
+
             // Display the result
             document.getElementById("countdown").innerHTML = 
-            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            days + " " + daysText + " " + 
+            hours + " " + hoursText + " " + 
+            minutes + " " + minutesText + " " + 
+            seconds + " " + secondsText;
 
             // If the countdown is over
             if (distance < 0) {
