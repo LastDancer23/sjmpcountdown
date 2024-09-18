@@ -1,0 +1,67 @@
+/* styles.css */
+@font-face {
+    font-family: 'SFSportsNight';
+    src: url('/TrueType/SFSportsNight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightAlternate';
+    src: url('/TrueType/SFSportsNightAlternate.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightAltUpright';
+    src: url('/TrueType/SFSportsNightAltUpright.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightNS';
+    src: url('/TrueType/SFSportsNightNS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightNSAlternate';
+    src: url('/TrueType/SFSportsNightNSAlternate.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightNSAltUpright';
+    src: url('/TrueType/SFSportsNightNSAltUpright.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightNSUpright';
+    src: url('/TrueType/SFSportsNightNSUpright.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSportsNightUpright';
+    src: url('/TrueType/SFSportsNightUpright.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Optionally, define default font styles */
+body {
+    font-family: 'SFSportsNight', sans-serif;
+}
+
+
+.font-sfsportsnightalternate {
+    font-family: 'SFSportsNightAlternate', sans-serif;
+}
