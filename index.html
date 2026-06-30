@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SJMP</title>
+    <title>O PÚBLICO <s>NA ESCOLA</s> NO SANTOINHO</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
-<body class="bg-gray-800 text-center flex items-center justify-center min-h-screen font-sfsportsnight">
+<body class="publico-bg text-center flex items-center justify-center min-h-screen">
     <!-- Banner Section -->
-    <div class="relative w-full max-w-4xl mx-4">
+    <div class="relative w-full max-w-3xl mx-4">
         <!-- Banner Image -->
-        <img src="SJMP_banner.PNG" alt="SJMP Banner" class="w-full h-auto object-cover rounded-lg shadow-md blur-sm">
-        
+        <img src="santoinho.jpg" alt="Santoinho Banner" class="w-full h-auto object-cover shadow-md blur-sm opacity-40">
+
         <!-- Title Overlay -->
-        <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white rounded-lg p-4">
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide mb-2 font-sfsportsnightalternate">Bom dia. Faltam</h1>
-            <!-- Countdown Section -->
-            <div id="countdown" class="text-xl sm:text-2xl md:text-3xl text-red-500 font-mono mt-4 mb-2"></div>
-            <h4 class="text-sm sm:text-base mt-2 mb-2">para a</h4>
-            <a href="https://www.fantrax.com/fantasy/league/rtj0tnlglw9fbcsp/draft" target="_blank" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2 font-sfsportsnightalternate underline underline-offset-8">pick do Varandas</a>
+        <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+            <div class="publico-rule"></div>
+            <p class="publico-kicker">O Público <s>na escola</s> no</p>
+            <a href="https://www.santoinho.com/" target="_blank" class="publico-headline publico-headline-link">Santoinho</a>
+            <div class="publico-rule"></div>
+            <p class="publico-lead">Faltam</p>
+            <div id="countdown" class="publico-countdown" style="font-style:normal"></div>
+            <div id="countdown-minutes" class="publico-countdown-sub" style="font-style:normal"></div>
+            <div id="countdown-seconds" class="publico-countdown-sub" style="font-style:normal"></div>
+            <div class="publico-rule" style="margin-top:1.5rem"></div>
         </div>
     </div>
 
     <script>
         // Define the countdown date
-        var countdownDate = new Date("Oct 8, 2024 3:10:00").getTime();
+        var countdownDate = new Date("Jul 25, 2026 20:00:00").getTime();
 
         // Update the countdown every second
         var countdownFunction = setInterval(function() {
@@ -45,11 +52,18 @@
             var secondsText = seconds === 1 ? "segundo" : "segundos";
 
             // Display the result
-            document.getElementById("countdown").innerHTML = 
-            days + " " + daysText + " " + 
-            hours + " " + hoursText + " " + 
-            minutes + " " + minutesText + " " + 
-            seconds + " " + secondsText;
+            document.getElementById("countdown").innerHTML =
+                days + " " + daysText + " " +
+                hours + " " + hoursText + " " +
+                minutes + " " + minutesText + " " +
+                seconds + " " + secondsText;
+
+            var totalMinutes = Math.floor(distance / (1000 * 60));
+            var totalSeconds = Math.floor(distance / 1000);
+            var totalMinutesText = totalMinutes === 1 ? "minuto" : "minutos";
+            var totalSecondsText = totalSeconds === 1 ? "segundo" : "segundos";
+            document.getElementById("countdown-minutes").innerHTML = totalMinutes.toLocaleString("pt-PT").replace(/\s/g, ".") + " " + totalMinutesText;
+            document.getElementById("countdown-seconds").innerHTML = totalSeconds.toLocaleString("pt-PT").replace(/\s/g, ".") + " " + totalSecondsText;
 
             // If the countdown is over
             if (distance < 0) {
